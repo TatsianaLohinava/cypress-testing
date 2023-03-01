@@ -1,0 +1,7 @@
+{
+  "query": "Ластик",
+  "email": "abcd@gmail.com",
+  "pass": "abcd",
+  "filterOption": "Новинк.",
+  "authPath": "https://auth.oz.by/index.phtml?action=loginByProvider"
+}
