@@ -1,4 +1,4 @@
-import data from "../../../fixtures/data.json";
+import data from "../../fixtures/data.json";
 const filterOption = new RegExp(data.filterOption);
 
 class ResultItem {

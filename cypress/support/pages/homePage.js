@@ -1,20 +1,24 @@
-const Input = require("../elements/input");
-const SidebarMenu = require("../elements/sidebarMenu");
-const LoginForm = require("../elements/loginForm");
-const ProductContainer = require("../elements/productContainer");
+const SearchInput = require("../components/searchInput");
+const SidebarMenu = require("../components/sidebarMenu");
+const LoginForm = require("../components/loginForm");
+const ProductContainer = require("../components/productContainer");
 
 export class HomePage {
 
     constructor() {
-        this.input = new Input();
+        this.searchInput = new SearchInput();
         this.sidebarMenu = new SidebarMenu();
         this.loginButton = '.top-panel__userbar__auth';
         this.loginForm = new LoginForm();
         this.productContainer = new ProductContainer();
     }
 
-    getInput() {
-        return this.input;
+    open() {
+        cy.visit('/');
+    }
+
+    getSearchInput() {
+        return this.searchInput;
     }
 
     getSidebarMenu() {

@@ -6,9 +6,9 @@ class SidebarMenu {
 
     hoverSidebarMenu() {
         cy.get(this.sidebarMenuItems).each(item => {
-            cy.hasClass(item, this.sidebarActiveClass, false);
+            cy.wrap(item).should('not.have.class', this.sidebarActiveClass)
             cy.wrap(item).trigger('mouseover');
-            cy.hasClass(item, this.sidebarActiveClass, true);
+            cy.wrap(item).should('have.class', this.sidebarActiveClass)
             cy.wrap(item).trigger('mouseleave');
         });
     }

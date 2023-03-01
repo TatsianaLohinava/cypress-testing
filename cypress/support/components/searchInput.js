@@ -1,12 +1,12 @@
-class Input {
+class SearchInput {
     constructor() {
-        this.inputField = '#top-s';
+        this.searchInputField = '#top-s';
         this.inputResetButton = '.input-reset';
         this.inputSearchButton = '.top-panel__search__btn';
     }
 
-    typeInputQuery(query) {
-        cy.get(this.inputField).type(query);
+    typeSearchQuery(query) {
+        cy.get(this.searchInputField).type(query);
     }
 
     clickSearchButton() {
@@ -18,8 +18,8 @@ class Input {
     }
 
     validateInputIsEmpty() {
-        cy.get(this.inputField).should('have.value', '');
+        cy.get(this.searchInputField).should('have.value', '');
     }
 }
 
-module.exports = Input;
+module.exports = SearchInput;

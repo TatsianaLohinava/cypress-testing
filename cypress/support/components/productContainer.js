@@ -7,10 +7,10 @@ class ProductContainer {
 
     unpinHeaders() {
         cy.get(this.containerHeader).each(header => {
-            if (cy.hasClass(header, this.unpinnedSection, false)) {
+            if (!header.hasClass(this.unpinnedSection)) {
                 cy.wrap(header).within(() => {
                     cy.wrap(header).get(this.unpinButton).click();
-                    cy.hasClass(header, this.unpinnedSection, true)
+                    cy.wrap(header).should('have.class', this.unpinnedSection)
                 })
             }
         });

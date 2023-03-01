@@ -1,5 +1,5 @@
-import data from "../../../fixtures/data.json";
-const ResultItem = require("../elements/resultItem");
+import data from "../../fixtures/data.json";
+const ResultItem = require("../components/resultItem");
 const filterOption = new RegExp(data.filterOption);
 
 export class ResultPage {

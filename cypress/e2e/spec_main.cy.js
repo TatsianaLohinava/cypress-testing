@@ -1,17 +1,17 @@
-import { HomePage } from "../support/components/pages/homePage";
+import { HomePage } from "../support/pages/homePage";
 import data from "../fixtures/data.json";
 
 describe('main page tests', () => {
   const homePage = new HomePage();
 
   beforeEach('opens main page', () => {
-    cy.visit('/');
+    homePage.open();
   })
 
   it('resets the input', () => {
-    homePage.getInput().typeInputQuery(data.query);
-    homePage.getInput().clickInputResetButton();
-    homePage.getInput().validateInputIsEmpty();
+    homePage.getSearchInput().typeSearchQuery(data.query);
+    homePage.getSearchInput().clickInputResetButton();
+    homePage.getSearchInput().validateInputIsEmpty();
   })
 
   it('shows message on invalid login credentials', () => {
