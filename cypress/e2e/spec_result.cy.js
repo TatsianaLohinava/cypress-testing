@@ -1,5 +1,5 @@
-import { HomePage } from "../support/components/HomePage"
-import { ResultPage } from "../support/components/ResultPage";
+import { HomePage } from "../support/components/pages/HomePage"
+import { ResultPage } from "../support/components/pages/ResultPage";
 import data from "../fixtures/data.json"
 
 describe('result page tests', () => {
@@ -8,16 +8,16 @@ describe('result page tests', () => {
 
   beforeEach('opens main page and submits query', () => {
     cy.visit('/');
-    homePage.typeInputQuery(data.query);
-    homePage.clickSearchButton();
+    homePage.getInput().typeInputQuery(data.query);
+    homePage.getInput().clickSearchButton();
   });
 
   it('checks and prints out query results', () => {
-    resultPage.printResultsList();
+    resultPage.getResultItem().printResultsList();
   })
 
   it('filters the results', () => {
     resultPage.clickFilterButton();
-    resultPage.validateFilterResult();
+    resultPage.getResultItem().validateFilterResult();
   })
 })

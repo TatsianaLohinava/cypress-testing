@@ -1,4 +1,4 @@
-import { HomePage } from "../support/components/HomePage";
+import { HomePage } from "../support/components/pages/homePage";
 import data from "../fixtures/data.json";
 
 describe('main page tests', () => {
@@ -9,19 +9,18 @@ describe('main page tests', () => {
   })
 
   it('resets the input', () => {
-    homePage.typeInputQuery(data.query);
-    homePage.clickInputResetButton();
-
-    homePage.getInput().should('have.value', '');
+    homePage.getInput().typeInputQuery(data.query);
+    homePage.getInput().clickInputResetButton();
+    homePage.getInput().validateInputIsEmpty();
   })
 
   it('shows message on invalid login credentials', () => {
     cy.intercept('POST', data.authPath).as('login')
 
     homePage.clickLoginButton();
-    homePage.clickEmailLoginButton();
-    homePage.fillInForm(data.email, data.pass);
-    homePage.submitForm();
+    homePage.getLoginForm().clickEmailLoginButton();
+    homePage.getLoginForm().fillInForm(data.email, data.pass);
+    homePage.getLoginForm().submitForm();
 
     let response = cy.wait('@login')
       .then(resp => cy.request('GET', resp.response.headers.location)).its('body');
@@ -30,10 +29,10 @@ describe('main page tests', () => {
   })
 
   it('changes background on hover', () => {
-    homePage.hoverSidebarMenu()
+    homePage.getSidebarMenu().hoverSidebarMenu()
   })
 
   it('unpins the section', () => {
-    homePage.unpinHeaders()
+    homePage.getProductContainer().unpinHeaders()
   })
 })
