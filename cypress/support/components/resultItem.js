@@ -10,8 +10,8 @@ class ResultItem {
 
     validateFilterResult() {
         cy.get(this.resultItem).each(item => {
-            const itemLabel = cy.wrap(item).find(this.resultProductLabel).invoke('text');
-            itemLabel.should('match', filterOption)
+            const itemLabel = item.find(this.resultProductLabel).text();
+            expect(itemLabel).to.match(filterOption)
         });
     }
 
