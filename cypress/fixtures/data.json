@@ -3,5 +3,6 @@
   "email": "abcd@gmail.com",
   "pass": "abcd",
   "filterOption": "Новинк[аи]",
-  "authPath": "https://auth.oz.by/index.phtml?action=loginByProvider"
+  "authPath": "https://auth.oz.by/index.phtml?action=loginByProvider",
+  "errorMessage": "Адрес электронной почты не зарегистрирован."
 }
