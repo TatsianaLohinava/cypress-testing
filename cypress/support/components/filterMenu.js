@@ -1,6 +1,3 @@
-import data from "../../fixtures/data.json";
-const filterOption = new RegExp(data.filterOption);
-
 class FilterMenu {
     constructor() {
         this.priceRange = '#hcont_r_cost';
@@ -9,7 +6,7 @@ class FilterMenu {
         this.filterApplyButton = '.filters__searchbtn__btn';
     }
 
-    clickFilterButton() {
+    clickFilterButton(filterOption) {
         cy.contains(this.filterOptionButton, filterOption).click();
     }
 

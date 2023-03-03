@@ -1,6 +1,7 @@
 import { HomePage } from "../support/pages/HomePage"
 import { ResultPage } from "../support/pages/ResultPage";
 import data from "../fixtures/data.json"
+const filterOption = new RegExp(data.filterOption);
 
 describe('result page tests', () => {
   const homePage = new HomePage();
@@ -17,8 +18,8 @@ describe('result page tests', () => {
   })
 
   it('filters the results', () => {
-    resultPage.getFilterMenu().clickFilterButton();
-    resultPage.getResultItem().validateFilterResult();
+    resultPage.getFilterMenu().clickFilterButton(filterOption);
+    resultPage.getResultItem().validateFilterResult(filterOption);
   })
 
   it('filters by the price', () => {

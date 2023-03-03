@@ -1,6 +1,3 @@
-import data from "../../fixtures/data.json";
-const filterOption = new RegExp(data.filterOption);
-
 class ResultItem {
     constructor() {
         this.resultItem = '.item-type-card';
@@ -9,7 +6,7 @@ class ResultItem {
         this.resultPriceLabel = '.item-type-card__btn';
     }
 
-    validateFilterResult() {
+    validateFilterResult(filterOption) {
         cy.get(this.resultItem).each(item => {
             const itemLabel = item.find(this.resultProductLabel).text();
             expect(itemLabel).to.match(filterOption)

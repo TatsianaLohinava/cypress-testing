@@ -1,5 +1,5 @@
 const ResultItem = require("../components/resultItem");
-const FilterMenu = require("../components/filterMenu")
+const FilterMenu = require("../components/filterMenu");
 
 export class ResultPage {
 
