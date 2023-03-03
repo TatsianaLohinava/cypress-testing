@@ -25,7 +25,7 @@ describe('main page tests', () => {
     let response = cy.wait('@login')
       .then(resp => cy.request('GET', resp.response.headers.location)).its('body');
 
-    response.should('contain', 'Адрес электронной почты не зарегистрирован.');
+    response.should('contain', data.errorMessage);
   })
 
   it('changes background on hover', () => {
