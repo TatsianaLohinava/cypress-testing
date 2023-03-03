@@ -15,8 +15,8 @@ class FilterMenu {
 
     setPriceRange(min, max) {
         cy.get(this.priceRange).within(() => {
-            cy.get(this.priceInput).eq(0).type(min);
-            cy.get(this.priceInput).eq(1).type(max);
+            cy.get(this.priceInput).first().type(min);
+            cy.get(this.priceInput).last().type(max);
         })
     }
 
