@@ -17,7 +17,13 @@ describe('result page tests', () => {
   })
 
   it('filters the results', () => {
-    resultPage.clickFilterButton();
+    resultPage.getFilterMenu().clickFilterButton();
     resultPage.getResultItem().validateFilterResult();
+  })
+
+  it('filters by the price', () => {
+    resultPage.getFilterMenu().setPriceRange(data.priceRange.min, data.priceRange.max);
+    resultPage.getFilterMenu().clickFilterApplyButton();
+    resultPage.getResultItem().validatePriceRange(data.priceRange.min, data.priceRange.max);
   })
 })
