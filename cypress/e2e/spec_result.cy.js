@@ -1,5 +1,5 @@
-import { HomePage } from "../support/pages/HomePage"
-import { ResultPage } from "../support/pages/ResultPage";
+import { HomePage } from "../support/pages/homePage"
+import { ResultPage } from "../support/pages/resultPage";
 import data from "../fixtures/data.json"
 const filterOption = new RegExp(data.filterOption);
 
