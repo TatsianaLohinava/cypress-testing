@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: 'k8z923',
+  projectId: 'xn41gq',
   blockHosts: [
     '*.yandex.ru',
     '*.google-analytics.com'
