@@ -9,7 +9,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          working-directory: cypress-testing/
           build: npm run build
           start: npm start
           browser: chrome
