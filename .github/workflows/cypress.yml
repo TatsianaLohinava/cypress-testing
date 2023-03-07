@@ -9,7 +9,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          working-directory: .
+          working-directory: cypress-testing
           browser: chrome
           start: npm start
           wait-on: 'http://localhost:3000' # Waits for above
