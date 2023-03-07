@@ -13,7 +13,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          working-directory: client
+          working-directory: ./
           start: npm start
           wait-on: 'http://localhost:3000' # Waits for above
           record: true
