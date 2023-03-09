@@ -35,4 +35,9 @@ describe('main page tests', () => {
   it('unpins the section', () => {
     homePage.getProductContainer().unpinHeaders()
   })
+
+  it.only('waits for the loader', { scrollBehavior: false }, () => {
+    homePage.getSidebarMenu().hoverMap();
+    homePage.waitUntilNotVisible();
+  })
 })

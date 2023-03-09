@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   blockHosts: [
-    '*.yandex.ru',
+    '*mc.yandex.ru',
     '*.google-analytics.com'
   ],
   e2e: {

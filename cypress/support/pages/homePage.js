@@ -11,10 +11,21 @@ export class HomePage {
         this.loginButton = '.top-panel__userbar__auth';
         this.loginForm = new LoginForm();
         this.productContainer = new ProductContainer();
+        this.slider = `[class='b-map__popup b-map__popup_processing']`;
     }
 
     open() {
         cy.visit('/');
+    }
+
+    waitUntilNotVisible() {
+        cy.get(this.slider)
+            .should('be.visible')
+            .then(slider => {
+                cy.window()
+                    .then(window => window.getComputedStyle(slider[0], 'after'))
+                    .then(after => cy.wrap(after.visibility).should('not.equal', 'visible'))
+            })
     }
 
     getSearchInput() {
