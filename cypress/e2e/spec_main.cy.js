@@ -36,7 +36,7 @@ describe('main page tests', () => {
     homePage.getProductContainer().unpinHeaders()
   })
 
-  it.only('waits for the loader', { scrollBehavior: false }, () => {
+  it('waits for the loader', { scrollBehavior: false }, () => {
     homePage.getSidebarMenu().hoverMap();
     homePage.waitUntilNotVisible();
   })
