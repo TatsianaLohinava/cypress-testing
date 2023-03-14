@@ -1,8 +1,12 @@
 {
-  "query": "Ластик",
+  "query": "Сыворотка",
   "email": "abcd@gmail.com",
-  "pass": "abcd",
+  "pass": "abcddjn",
   "filterOption": "Новинк[аи]",
   "authPath": "https://auth.oz.by/index.phtml?action=loginByProvider",
+  "priceRange": {
+    "min": 2,
+    "max": 10
+  },
   "errorMessage": "Адрес электронной почты не зарегистрирован."
 }

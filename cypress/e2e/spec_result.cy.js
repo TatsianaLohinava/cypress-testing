@@ -1,6 +1,7 @@
-import { HomePage } from "../support/pages/HomePage"
-import { ResultPage } from "../support/pages/ResultPage";
+import { HomePage } from "../support/pages/homePage"
+import { ResultPage } from "../support/pages/resultPage";
 import data from "../fixtures/data.json"
+const filterOption = new RegExp(data.filterOption);
 
 describe('result page tests', () => {
   const homePage = new HomePage();
@@ -17,7 +18,13 @@ describe('result page tests', () => {
   })
 
   it('filters the results', () => {
-    resultPage.clickFilterButton();
-    resultPage.getResultItem().validateFilterResult();
+    resultPage.getFilterMenu().clickFilterButton(filterOption);
+    resultPage.getResultItem().validateFilterResult(filterOption);
+  })
+
+  it('filters by the price', () => {
+    resultPage.getFilterMenu().setPriceRange(data.priceRange.min, data.priceRange.max);
+    resultPage.getFilterMenu().clickFilterApplyButton();
+    resultPage.getResultItem().validatePriceRange(data.priceRange.min, data.priceRange.max);
   })
 })
