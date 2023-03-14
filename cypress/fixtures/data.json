@@ -2,6 +2,11 @@
   "query": "Ластик",
   "email": "abcd@gmail.com",
   "pass": "abcd",
-  "filterOption": "Новинк.",
-  "authPath": "https://auth.oz.by/index.phtml?action=loginByProvider"
+  "filterOption": "Новинк[аи]",
+  "authPath": "https://auth.oz.by/index.phtml?action=loginByProvider",
+  "priceRange": {
+    "min": 2,
+    "max": 10
+  },
+  "errorMessage": "Адрес электронной почты не зарегистрирован."
 }

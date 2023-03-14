@@ -5,7 +5,7 @@ class SidebarMenu {
     }
 
     hoverSidebarMenu() {
-        cy.get(this.sidebarMenuItems).each(item => {
+        cy.get(this.sidebarMenuItems).should('be.visible').each(item => {
             cy.wrap(item).should('not.have.class', this.sidebarActiveClass)
             cy.wrap(item).trigger('mouseover');
             cy.wrap(item).should('have.class', this.sidebarActiveClass)
