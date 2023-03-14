@@ -12,6 +12,10 @@ class SidebarMenu {
             cy.wrap(item).trigger('mouseleave');
         });
     }
+
+    hoverMap() {
+        cy.contains("Магазины OZ").trigger('mouseover');
+    }
 }
 
 module.exports = SidebarMenu;
