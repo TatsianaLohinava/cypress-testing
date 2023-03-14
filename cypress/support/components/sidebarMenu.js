@@ -1,0 +1,17 @@
+class SidebarMenu {
+    constructor() {
+        this.sidebarMenuItems = `[class='main-nav__list__li main-nav__list__li_wnav']`;
+        this.sidebarActiveClass = 'main-nav__list__li_wnav_active';
+    }
+
+    hoverSidebarMenu() {
+        cy.get(this.sidebarMenuItems).each(item => {
+            cy.wrap(item).should('not.have.class', this.sidebarActiveClass)
+            cy.wrap(item).trigger('mouseover');
+            cy.wrap(item).should('have.class', this.sidebarActiveClass)
+            cy.wrap(item).trigger('mouseleave');
+        });
+    }
+}
+
+module.exports = SidebarMenu;
